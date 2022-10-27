@@ -1,161 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <!-- Boot Strap & other links -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scaled.0">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   
-        <title>Task Manager, Group 6</title>
-</head>
-  
-<!-- Body beginning -->
-<body>
-  <div class="container">
-  <!-- Task Manager Portion -->
-  <div class="Task-Manager">
-    <div class="row">
-      <h1>Task Manager</h1>
-    </div>
-    <div class="row">
-      <h6>Task Name:</h6>
-    </div>
-       <div class="input-group">
-      <div class="input-group-prepend">
-          <span class="input-group-text"></span>
+    <style>
+      #alertMe{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="my-5">Task Manager</h1>
         </div>
-            <input type="text" class="form-control">
-            <div class="input-group-append">
-            <span class="input-group-text"></span>
-          </div>
+        
+        <div class="col-12">
+          <h2>New Task</h2>
+          <form id="newTaskForm">
+
+            <div class="form-group">
+              <label for="name">Name: </label>
+              <input type="text" class="form-control" id="name" placeholder="Name" value="Group 6 Task">
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description: </label>
+              <textarea class="form-control" id="description" placeholder="My Description" rows="3"  value="My Description"></textarea>
+            </div>
+
+            <div class="row">
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="assignedTo">Assigned To: </label>
+                  <input type="text" class="form-control" id="assignedTo" placeholder=""  value="Roboto">
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="dueDate">Date: </label>
+                  <input type="date" class="form-control" id="dueDate" placeholder=""  value="2021-1-1">
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="status">Status: </label>
+                  <select class="form-control" id="status">
+                    <option>To-do</option>
+                    <option>Done</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div id="alertMe" class="alert alert-danger" role="alert">
+              Please fill out all fields!
+            </div>
+            <button id="newTaskFormButton" type="submit" class="btn btn-primary btn-lg btn-block">Add a Task</button>
+          </form>
         </div>
+      
+      
+        <div class="col-12">
+          <br><h2>Task List</h1>
+          <span id="taskList"></span> 
+        </div>
+      
+      
       </div>
     </div>
 
-  <!-- Description portion -->
-  <div class="container">
-    <div class="row">
-      <h6>Description:</h6>
-    </div>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">              </span>
-          </div>
-          <input type="text" class="form-control">
-        <div class="input-group-append">
-      <span class="input-group-text"></span>
-        </div>
-  </div>
-    
-  <!-- Assign Portion -->
-<div class="assign">
- <div class="row"> 
-  <h6>Assigned To:</h6>
- </div>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text">              </span>
-        </div>
-        <input type="text" class="form-control">
-        <div class="input-group-append">
-          <span class="input-group-text"></span>
-        </div>
-      </div>
-
-  <!-- Date Portion -->
- <center> <div class="date">
-    <h6>Date:</h6>
-<table border="1">
-
-                <tr>
-                  <th colspan="7">October 2022 <p></p></p>  </th>
-                  </tr>
-                  
-                  <tr>
-                    <th>Su</th>
-                    <th>Mo</th>
-                    <th>Tu</th>
-                    <th>We</th>
-                    <th>Th</th>
-                    <th>Fr</th>
-                    <th>Sa</th>
-                    </tr>
-
-                    <tr>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>3</td>
-                      <td>4</td>
-                      <td>5</td>
-                      <td>6</td>
-                      <td>7</td>
-                      </tr>
-                      <tr>
-                        <td>8</td>
-                        <td>9</td>
-                        <td>10</td>
-                        <td>11</td>
-                        <td>12</td>
-                        <td>13</td>
-                        <td>14</td>
-                        </tr>
-                        
-                        <tr>
-                        <td>15</td>
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
-                        <td>19</td>
-                        <td>20</td>
-                        <td>21</td>
-                        </tr>
-                        
-                        <tr>
-                        <td>22</td>
-                        <td>23</td>
-                        <td>24</td>
-                        <td>25</td>
-                        <td>26</td>
-                        <td>27</td>
-                        <td>28</td>
-                        </tr>
-                        
-                        <tr>
-                        <td>29</td>
-                        <td>30</td>
-                        <td>31</td>
-                        </tr>
-                        </table>
-                
-                </table>
-              
-  <!-- Status Portion -->
-  <div class="status">
-  <div class="row">
-    <h6>Status:</h6>
-  </div>
-  </div>
-  <div class="row">
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Task Status
-    </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">In Progress</a>
-        <a class="dropdown-item" href="#">Completed</a>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Add Button -->
-<div class="row">    
-  <button type="button" class="btn btn-primary" style="width: 100%;">Add</button>
-</div>
-  
-<!-- Task Cards below are inside of list group -->
-
-  <!-- Task Card 1 -->
+      <!-- Task Card 1 -->
 <ul class="list-group">
   <li class="list-group-item">Robot Brainstorming</li>
 <div class="Task-list">
@@ -163,7 +83,7 @@
   <div class="card" style="width: 100%;">
     <div class="card-body">
         <h4 class="card-title">Ryan's Task</h4>
-        <p class="card-text">Building a robot for the science fair that shoots lazers out of his hands and fire out              of his mouth. The fire is just made of spaghetti sauce!</p>
+        <p class="card-text">We're going to build a robot for the science fair but what shoud we do with it?</p>
       <div class="row">  
         <button type="button" class="btn btn-success">Add</button>
         <button type="button" class="btn btn-outline-danger">Delete</button>
@@ -186,13 +106,13 @@
   </div> 
   
   <!-- Task Card 3 --> 
-<li class="list-group-item">Testing the Robot</li>
+<li class="list-group-item">Robot Testing</li>
   <div class="Task-list">
   </div>
     <div class="card" style="width: 100%;">
       <div class="card-body">
           <h4 class="card-title">Lawrence's Task</h4>
-          <p class="card-text">The robot is finished! But ... we're not done yet it's time to run a bug test for any remaining bugs and put on the finishing touches.</p>
+          <p class="card-text">The robot has been built and now it is time to test some of it features to see if it is fully functional.</p>
         <div class="row">  
           <button type="button" class="btn btn-success">Add</button>
           <button type="button" class="btn btn-outline-danger">Delete</button>
@@ -201,7 +121,7 @@
     </div>  
 
 <!-- Task Card 4 -->  
-  <li class="list-group-item">Debugging any Glitches</li>
+  <li class="list-group-item">Robot Reprogramming</li>
 <div class="Task-list">
 </div>
   <div class="card" style="width: 100%;">
@@ -215,14 +135,14 @@
     </div>
   </div>  
   
- <!-- Task Card 5 --> 
+ <!-- Task Card 5 -->
   <li class="list-group-item">Final Results</li>
 <div class="Task-list">
 </div>
   <div class="card" style="width: 100%;">
     <div class="card-body">
         <h4 class="card-title">Chelse's Task</h4>
-        <p class="card-text">Building a robot for the science fair that shoots lazers out of his hands and fire out              of his mouth. The fire is just made of spaghetti sauce!</p>
+        <p class="card-text">Building a robot for the science fair was hard. Now we can show it off in all it's awesomeness!</p>
       <div class="row">  
         <button type="button" class="btn btn-success">Add</button>
         <button type="button" class="btn btn-outline-danger">Delete</button>
@@ -230,17 +150,95 @@
     </div>
   </div> 
 </ul>
-   
+</div>   
+
+     <script src="index.js"></script>
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+
+  
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <script src='js/taskManager.js'></script>
+  <script src='js/index.js'></script>
+  </body>
+</html>
+
+
+
+<!-- BootStrap & other links -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- -->
+
+  
+  <!-- -->
+  <div class="container">
+    <!-- Task Manager Portion -->
+    <div class="Task-Manager">
+      <div class="row">
+        <h1>Task Manager</h1>
+      </div>
+      <div class="row">
+        <h6>Task Name:</h6>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"></span>
+        </div>
+        <input type="text" class="form-control">
+        <div class="input-group-append">
+          <span class="input-group-text"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <h6>Description:</h6>
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> </span>
+      </div>
+      <input type="text" class="form-control">
+      <div class="input-group-append">
+        <span class="input-group-text"></span>
+      </div>
+    </div>
+  </div>
+<!-- -->
+    
+
+
+  
   <!-- JavaScript links -->
   <script src="index.js"></script>
-  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+
   
-<!--Bootstrap js and jquery-->
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-<script src='js/taskManager.js'></script>
-<script src='js/index.js'></script>
-</script>
+  <!--Bootstrap js and jquery-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <script src='js/taskManager.js'></script>
+  <script src='js/index.js'></script>
+<!-- --
 </body>
+
 </html>
